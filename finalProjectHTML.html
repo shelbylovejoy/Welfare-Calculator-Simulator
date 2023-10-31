@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WelfareCalc101!</title>
+</head>
+<body>
+
+    <style>
+        body {
+            background-image: url('backgroundSEAL.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 30%;
+            background-position: bottom;
+            }
+        </style>
+    <p>Hello and welcome to WelfareCalc101! We are so excited to have you on our very new site! To get started, please enter the details of your case: <br> </p>
+    
+    <form id="form1">
+         Name: <br> <input type="text" name="name"> <br>
+         Required Documents: <br> <input type="text" name="docs"> <br>
+    </form>
+    
+    <button onclick="outputresult()">Submit</button>
+    
+    <script>
+      function outputresult() 
+      {
+        var x, y, name;
+        x = document.getElementById("form1");
+        y = x.elements["name"].value;
+        z = x.elements["docs"].value;
+        if (y=='Shelli Birden'){
+            if(z=='doc1, app1, house1'){
+                document.getElementById("demo").innerHTML="Mailing Date: 5/16/23 <br> Dear SHELLI BIRDEN, <br> MA D 01 (MI) <br><br> Your MEDICAID benefits will be discontinued effective May 21, 2023 due to the following reason(s): <br> -FAILURE TO COOPERATE IN ESTABLISHING ELIGIBILITY <br><br> Important: If you believe that you may be eligible for Medicaid benefits under another category and have more information about your case, please contact our automated help desk at (469) 740-3482";
+            }
+            if(z=="docsFIXED"){
+                document.getElementById("demo").innerHTML="Mailing Date: 5/16/23 <br> Dear SHELLI BIRDEN, <br> MA D 01 (MI) <br><br> Your MEDICAID benefits will be continued effective June 5, 2023 (21 days from now) <br> <br> Important: If you believe that you may be eligible for Medicaid benefits under another category and have more information about your case, please contact us at (469) 740-3482";
+            }
+        }
+        if (y=='Lindsay Kidwell'){
+            document.getElementById("demo").innerHTML="Mailing Date: 5/16/23 <br> Dear LINDSAY KIDWELL, <br> MA D 01 (MI) <br><br> Your application for FOOD STAMPS dated April 16, 2023 has been accepted <br> -------- <br> Your HOOSIER HEALTHWISE benefits will be continued effective April 16, 2023 <br> <br> Important: If you believe that you may be eligible for benefits under another category and have more information about your case, please contact our automated help desk at (469) 740-3482";
+        }
+    }
+
+    </script>
+    <p id="demo"></p>
+</body>
+</html>
